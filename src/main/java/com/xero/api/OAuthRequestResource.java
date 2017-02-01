@@ -71,7 +71,7 @@ public class OAuthRequestResource extends GenericUrl {
 
 	public String contentType = null;
 	public String ifModifiedSince = null;
-	public String accept = "application/json";
+	public String accept = null;
 	private String body = null;
 	private HttpContent requestBody = null;
 	private String httpMethod = "GET";
@@ -98,6 +98,7 @@ public class OAuthRequestResource extends GenericUrl {
 	    }
 		
 		this.body = body;
+		this.accept = config.getAccept();
 	}
 	
 	/**
@@ -125,7 +126,7 @@ public class OAuthRequestResource extends GenericUrl {
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.setUserAgent(config.getUserAgent());
-		headers.setAccept(config.getAccept());
+		headers.setAccept(accept);
 		headers.setContentType("application/xml");
 		if(ifModifiedSince != null) {
 			System.out.println("Set Header " + this.ifModifiedSince);
