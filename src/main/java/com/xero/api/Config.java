@@ -35,6 +35,15 @@ public class Config {
 		this.configFile = configFile;
 		load();
 	}
+	
+	public Config(String consumerKey, String consumerSecret, String pathToPrivateKey, String privateKeyPassword) {
+		CONSUMER_KEY = consumerKey;
+		CONSUMER_SECRET = consumerSecret;
+		PATH_TO_PRIVATE_KEY_CERT = pathToPrivateKey;
+		PRIVATE_KEY_PASSWORD = privateKeyPassword;
+		APP_TYPE = "PRIVATE";
+		USER_AGENT = "XeroJavaAPI";
+	}
 	   
 	/* Static 'instance' method */
 	public static Config getInstance() 
