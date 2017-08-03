@@ -112,6 +112,10 @@ public class XeroClient {
 		this.tokenSecret = tokenSecret;
 	}
 	
+	public Config getConfig() {
+		return config;
+	}
+	
 	protected XeroApiException newApiException(HttpResponse response) throws IOException {
 	    ApiException exception = null;
 	    try {
